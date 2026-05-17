@@ -83,7 +83,51 @@ tw-footer a {
     background: gold;
     border-radius: 50%;
     box-shadow: 0 0 20px gold;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Footer" color="blue"></tw-tag><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="900,375" size="100,100">Welcome to The Odyssey Adventure.
+} 
+  .ciconesdot {
+    position: absolute;
+    top: 205px;
+    left: 300px;
+    width: 22px;
+    height: 22px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 20px gold;
+}
+
+.lotusdot {
+    position: absolute;
+    top: 300px;
+    left: 410px;
+    width: 22px;
+    height: 22px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 20px gold;
+}
+
+.cyclopsdot {
+    position: absolute;
+    top: 355px;
+    left: 560px;
+    width: 22px;
+    height: 22px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 20px gold;
+}
+
+.aeolusdot {
+    position: absolute;
+    top: 255px;
+    left: 710px;
+    width: 22px;
+    height: 22px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 20px gold;
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Footer" color="blue"></tw-tag><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="900,375" size="100,100">Welcome to The Odyssey Adventure.
 
 For ten long years, the Greeks and the Trojans fought a terrible war over the city of Troy.
 &lt;img src=&quot;images/ontheshore.png&quot; width=&quot;700&quot;&gt;
@@ -148,7 +192,7 @@ The delay costs valuable time, and the gods send terrible winds against you.
 You cannot return home yet.
 
 [[Continue]]
-[[Read the summary Cicones]]
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read the summary Cicones]]&lt;/span&gt;
 </tw-passagedata><tw-passagedata pid="5" name="Hold a victory feast on the shores of Troy" tags="" position="1025,1000" size="100,100">Your men celebrate wildly after the fall of Troy.
 
 Hours become days.
@@ -371,7 +415,7 @@ Dark clouds gather over the sea.
 
 Far ahead, another island waits.
 
-[[next step of our journey]]</tw-passagedata><tw-passagedata pid="28" name="y3lqk7" tags="" position="1275,2375" size="100,100">Lets try this one again shall we.
+[[Aeolus]]</tw-passagedata><tw-passagedata pid="28" name="y3lqk7" tags="" position="1275,2375" size="100,100">Lets try this one again shall we.
 [[Hide beneath the sheep]] </tw-passagedata><tw-passagedata pid="29" name="Lotus Fruit" tags="" position="325,1200" size="100,100">:: Lotus Fruit
 
 Your men eat the lotus fruit.
@@ -1232,7 +1276,7 @@ The Discovery: The next morning, Princess Nausicaa (daughter of King Alcinous) c
 The Reveal: The Phaeacians harbor him blindly, following the extreme codes of xenia. During a grand feast, the court bard Demodocus sings of the Trojan War and the quarrel between Odysseus and Achilles. Odysseus breaks down in tears, hiding his face in his purple cloak. King Alcinous notices, stops the music, and asks his guest who he is. Odysseus finally stands and states: &quot;I am Odysseus, son of Laertes...&quot; He then narrates his entire ten-year journey (Adventures 1 through 11) to the captivated court.
 
 The Reward: Deeply moved and recognizing his nobility, Alcinous gives Odysseus more treasures of bronze, gold, and woven clothing than he would have won at Troy. They place him on one of their magically fast, crewless ships. Odysseus falls into a deep, death-like sleep as the ship slices through the water toward home.
-(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="68" name="Read Aeolus Summary" tags="" position="1725,2350" size="100,100">4. Aeolus (Aeolia)
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="68" name="Read Aeolus Summary" tags="" position="1850,2425" size="100,100">4. Aeolus (Aeolia)
 The Set-up: The Greeks sail to Aeolia, a floating island enclosed by a wall of bronze, ruled by Aeolus, the god/warden of the winds. Aeolus treats them with flawless hospitality for a month.
 
 The Gift: To help Odysseus get home, Aeolus binds all the chaotic, destructive winds of the world into a tight bag made of ox-hide, securing it with a silver cord. He leaves only the gentle West Wind (Zephyrus) free to guide Odysseus’s fleet straight to Ithaca.
@@ -1264,13 +1308,49 @@ Why It Matters: This is the first demonstration of the crew’s fatal flaw: lack
 
 &lt;img src=&quot;images/odyssey-map.jpeg&quot; width=&quot;100%&quot;&gt;
 
-(if: $troyVisited)[
-
+(if: $troyVisited is true)[
 &lt;div class=&quot;troydot&quot;&gt;&lt;/div&gt;
-
 ]
 
-&lt;/div&gt;</tw-passagedata></tw-storydata>
+(if: $ciconesVisited is true)[
+&lt;div class=&quot;ciconesdot&quot;&gt;&lt;/div&gt;
+]
+
+(if: $lotusVisited is true)[
+&lt;div class=&quot;lotusdot&quot;&gt;&lt;/div&gt;
+]
+
+(if: $cyclopsVisited is true)[
+&lt;div class=&quot;cyclopsdot&quot;&gt;&lt;/div&gt;
+]
+
+(if: $aeolusVisited is true)[
+&lt;div class=&quot;aeolusdot&quot;&gt;&lt;/div&gt;
+]
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="Aeolus" tags="" position="1400,2375" size="100,100">(set: $aeolusVisited to true)
+
+# Aeolus – Keeper of the Winds
+
+After escaping the Cyclops, you and your exhausted crew sail onward across the sea.
+
+At last, you arrive at the floating island of Aeolus, ruler of the winds.
+
+Aeolus welcomes you as honored guests. For many days he listens to the story of your voyage from Troy.
+
+Before you depart, Aeolus brings forward a strange leather bag tied tightly with silver cord.
+
+“Inside this bag,” he says, “I have trapped every dangerous wind that could drive you from your course. Only the gentle west wind remains free to guide you home.”
+
+Aeolus offers you the bag.
+
+Will you accept his gift?
+
+[[Accept the Bag of Winds-&gt;Bag of Winds]]
+
+[[Refuse Aeolus&#39;s Gift-&gt;Refuse Aeolus]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Aeolus Summary]]&lt;/span&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
