@@ -9,7 +9,81 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Odyssey.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Odyssey" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="7375C383-F1CD-4190-8E6F-D1FC437AC11C" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="900,375" size="100,100">Welcome to The Odyssey Adventure.
+<tw-storydata name="Odyssey" startnode="1" creator="Twine" creator-version="2.12.0" format="Harlowe" format-version="3.3.9" ifid="7375C383-F1CD-4190-8E6F-D1FC437AC11C" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.summaryLink {
+    background-color: #222;
+    color: gold;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid gold;
+}
+
+tw-footer {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: auto;
+    background-color: rgba(0,0,0,0.7);
+    padding: 8px 12px;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+tw-footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+tw-footer a {
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.mapbutton {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0,0,0,0.75);
+    padding: 10px 14px;
+    border-radius: 12px;
+    z-index: 9999;
+    font-size: 18px;
+}
+
+.mapbutton a {
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mapcontainer {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.mapcontainer img {
+    width: 100%;
+    display: block;
+    border: 3px solid #3b2a1a;
+    border-radius: 12px;
+}
+
+.troydot {
+    position: absolute;
+    top: 140px;
+    left: 180px;
+    width: 22px;
+    height: 22px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 20px gold;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Footer" color="blue"></tw-tag><tw-tag name="footer" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="900,375" size="100,100">Welcome to The Odyssey Adventure.
 
 For ten long years, the Greeks and the Trojans fought a terrible war over the city of Troy.
 &lt;img src=&quot;images/ontheshore.png&quot; width=&quot;700&quot;&gt;
@@ -28,14 +102,15 @@ Return to Ithaca alive.
 
 How to play:
 - Click the links to make choices.
-- Some choices are dangerous.
-- Wrong decisions may delay your journey or cause disaster.
-- Think carefully before acting.
-- You must follow the timeline correctly
+- You aim is to follow the original story.
+- Just like Odysseus, sometimes you have to make the wrong decision to teke the right path.
 
 [[Begin the voyage]]
 
-</tw-passagedata><tw-passagedata pid="2" name="Lotus Eaters" tags="" position="1025,500" size="100,100"></tw-passagedata><tw-passagedata pid="3" name="Aeolus" tags="" position="775,500" size="100,100"></tw-passagedata><tw-passagedata pid="4" name="Begin the voyage" tags="" position="900,500" size="100,100">You stand on the shores of ruined Troy.
+</tw-passagedata><tw-passagedata pid="2" name="Begin the voyage" tags="" position="900,500" size="100,100">You stand on the shores of ruined Troy.
+(set: $troyVisited to true)
+
+&lt;img src=&quot;images/onthe shores.png&quot; width=&quot;700&quot;&gt;
 
 Behind you, the city burns after ten years of war.
 Ahead lies the long journey home to Ithaca.
@@ -48,7 +123,7 @@ What will you do?
 
 [[Sail directly home]]
 [[Raid the nearby land of the Cicones for supplies]]
-[[Hold a victory feast on the shores of Troy]]</tw-passagedata><tw-passagedata pid="5" name="Sail directly home" tags="" position="775,1000" size="100,100">You order the fleet to sail immediately.
+[[Hold a victory feast on the shores of Troy]]</tw-passagedata><tw-passagedata pid="3" name="Sail directly home" tags="" position="775,1000" size="100,100">You order the fleet to sail immediately.
 
 For a moment, it seems the gods favour you.
 The winds are calm, and your men celebrate the thought of home.
@@ -59,7 +134,8 @@ A violent storm crashes into the fleet, scattering your ships across unknown wat
 
 You are no longer on the path home.
 
-[[Return to the shore of Troy-&gt;Start]]</tw-passagedata><tw-passagedata pid="6" name="Raid the nearby land of the Cicones for supplies" tags="" position="900,1000" size="100,100">Your men raid the land of the Cicones, stealing food, gold, and wine.
+[[Return to the shore of Troy-&gt;Start]]</tw-passagedata><tw-passagedata pid="4" name="Raid the nearby land of the Cicones for supplies" tags="" position="900,1000" size="100,100">(set: $ciconesVisited to true)
+Your men raid the land of the Cicones, stealing food, gold, and wine.
 
 At first the attack succeeds, but your men become greedy and refuse to leave quickly.
 
@@ -71,7 +147,9 @@ The delay costs valuable time, and the gods send terrible winds against you.
 
 You cannot return home yet.
 
-[[Continue]]</tw-passagedata><tw-passagedata pid="7" name="Hold a victory feast on the shores of Troy" tags="" position="1025,1000" size="100,100">Your men celebrate wildly after the fall of Troy.
+[[Continue]]
+[[Read the summary Cicones]]
+</tw-passagedata><tw-passagedata pid="5" name="Hold a victory feast on the shores of Troy" tags="" position="1025,1000" size="100,100">Your men celebrate wildly after the fall of Troy.
 
 Hours become days.
 
@@ -79,7 +157,7 @@ During the celebrations, much of your food is wasted, and several sailors become
 
 Your officers finally convince you that the fleet must gather fresh supplies before leaving.
 
-[[Return to the shore of Troy-&gt;Start]]</tw-passagedata><tw-passagedata pid="8" name="Continue" tags="" position="775,1125" size="100,100">After escaping the Cicones, your fleet sails across rough seas for many days.
+[[Return to the shore of Troy-&gt;Start]]</tw-passagedata><tw-passagedata pid="6" name="Continue" tags="" position="775,1125" size="100,100">After escaping the Cicones, your fleet sails across rough seas for many days.
 
 Your tired sailors begin to lose hope of ever reaching Ithaca.
 
@@ -91,17 +169,28 @@ Another coast is rocky and filled with dark caves.
 Where will you go?
 
 [[Investigate the island of flowers]]
-[[Explore the rocky cave island]]</tw-passagedata><tw-passagedata pid="9" name="Investigate the island of flowers" tags="" position="712.5,1250" size="100,100">Your ships land on the strange island.
+[[Explore the rocky cave island]]</tw-passagedata><tw-passagedata pid="7" name="Investigate the island of flowers" tags="" position="712.5,1250" size="100,100">:: Lotus Island
 
-The local people offer your sailors a mysterious lotus fruit.
+After days lost at sea, your ships finally reach a quiet green island.
 
-Soon, several men stop caring about home entirely.
-They only want to remain on the island forever.
+The air smells sweet, and soft music drifts through the trees.
+
+Friendly people approach carrying strange golden flowers and fruit.
+
+“These are lotus plants,” one sailor says. “The people here seem peaceful.”
+
+Some of your exhausted men beg to rest on the island.
 
 What will you do?
 
-[[Force the sailors back onto the ships]]
-[[Allow them to stay and rest]]</tw-passagedata><tw-passagedata pid="10" name="Force the sailors back onto the ships" tags="" position="650,1375" size="100,100">You drag the enchanted sailors back to the ships by force.
+[[Allow your men to eat the lotus fruit-&gt;Lotus Fruit]]
+
+[[Order your men to stay on the ships and leave immediately-&gt;Island of the Lotus Eaters]]
+
+[[Allow them to stay and rest]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Lotus Island Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="8" name="Island of the Lotus Eaters" tags="" position="400,1450" size="100,100">(set: $lotusVisited to true)
+You drag the enchanted sailors back to the ships by force.
 
 They scream and beg to stay, but you order the fleet to leave immediately.
 
@@ -109,7 +198,7 @@ As the island disappears behind you, your men slowly recover their senses.
 
 Ahead lies another island filled with caves.
 
-[[Continue to the cave island]]</tw-passagedata><tw-passagedata pid="11" name="Allow them to stay and rest" tags="" position="775,1375" size="100,100">You allow the sailors to remain among the Lotus-Eaters.
+[[Continue to the Island of the Cyclopes]]</tw-passagedata><tw-passagedata pid="9" name="Allow them to stay and rest" tags="" position="175,1425" size="100,100">You allow the sailors to remain among the Lotus-Eaters.
 
 Days pass.
 
@@ -119,7 +208,8 @@ Eventually, your journey completely falls apart.
 
 You realise you must leave this island immediately before all hope is lost.
 
-[[Return to the shore after the Cicones-&gt;Continue]]</tw-passagedata><tw-passagedata pid="12" name="Continue to the cave island" tags="" position="650,1500" size="100,100">You arrive at a rocky island scattered with giant sheep and enormous caves.
+[[Return to the shore after the Cicones-&gt;Continue]]</tw-passagedata><tw-passagedata pid="10" name="Continue to the Island of the Cyclopes" tags="" position="650,1500" size="100,100">(set: $cyclopsVisited to true)
+You arrive at a rocky island scattered with giant sheep and enormous caves.
 
 Inside one cave, you discover baskets of cheese, milk, and food.
 
@@ -128,7 +218,9 @@ Your hungry crew beg to steal the supplies and leave quickly.
 What will you do?
 
 [[Take the supplies and leave immediately]]
-[[Stay and wait to meet the cave owner]]</tw-passagedata><tw-passagedata pid="13" name="Explore the rocky cave island" tags="" position="900,1250" size="100,100">Dark clouds gather above the sea.
+[[Stay and wait to meet the cave owner]]
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Cyclopes Summary]]&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="11" name="Explore the rocky cave island" tags="" position="900,1250" size="100,100">Dark clouds gather above the sea.
 
 Athena warns Odysseus that this island lies far beyond the current voyage.
 
@@ -136,7 +228,7 @@ Huge waves force the ships away from the island.
 
 The crew must choose another path.
 
-[[Continue]]</tw-passagedata><tw-passagedata pid="14" name="Take the supplies and leave immediately" tags="" position="587.5,1625" size="100,100">You quickly load the supplies onto the ships and sail away.
+[[Continue]]</tw-passagedata><tw-passagedata pid="12" name="Take the supplies and leave immediately" tags="" position="587.5,1625" size="100,100">You quickly load the supplies onto the ships and sail away.
 
 Your men celebrate the easy victory.
 
@@ -146,7 +238,7 @@ The gods seem to push your ships back toward the shore.
 
 A powerful wind drives the fleet in circles until you once again stand before the giant cave.
 
-[[Return to the cave-&gt;83fu81]]</tw-passagedata><tw-passagedata pid="15" name="Stay and wait to meet the cave owner" tags="" position="712.5,1625" size="100,100">You decide to remain inside the cave.
+[[Return to the cave-&gt;83fu81]]</tw-passagedata><tw-passagedata pid="13" name="Stay and wait to meet the cave owner" tags="" position="712.5,1625" size="100,100">You decide to remain inside the cave.
 
 As night falls, the ground suddenly trembles beneath your feet.
 
@@ -165,8 +257,8 @@ Your terrified crew beg for escape.
 What will you do?
 
 [[Attack the Cyclops immediately]]
-[[Speak calmly and offer him wine]]</tw-passagedata><tw-passagedata pid="16" name="83fu81" tags="" position="587.5,1750" size="100,100">You made a hasty decision and should think again.
-[[Stay and wait to meet the cave owner]] </tw-passagedata><tw-passagedata pid="17" name="Attack the Cyclops immediately" tags="" position="775,1750" size="100,100">Your men charge forward with swords and spears.
+[[Speak calmly and offer him wine]]</tw-passagedata><tw-passagedata pid="14" name="83fu81" tags="" position="587.5,1750" size="100,100">You made a hasty decision and should think again.
+[[Stay and wait to meet the cave owner]] </tw-passagedata><tw-passagedata pid="15" name="Attack the Cyclops immediately" tags="" position="775,1750" size="100,100">Your men charge forward with swords and spears.
 
 But the Cyclops is enormous.
 
@@ -177,7 +269,7 @@ Worse still, the gigantic stone blocking the cave cannot be moved without the Cy
 You realise brute force will not save you.
 Go back and speak to the Cyclops
 
-[[Speak calmly and offer him wine]] </tw-passagedata><tw-passagedata pid="18" name="Speak calmly and offer him wine" tags="" position="900,1750" size="100,100">You calmly offer the Cyclops strong wine taken from Troy.
+[[Speak calmly and offer him wine]] </tw-passagedata><tw-passagedata pid="16" name="Speak calmly and offer him wine" tags="" position="900,1750" size="100,100">You calmly offer the Cyclops strong wine taken from Troy.
 
 The giant drinks greedily.
 
@@ -186,7 +278,7 @@ The giant drinks greedily.
 What will you tell him?
 
 [[Tell him your real name]]
-[[Tell him your name is Nobody]]</tw-passagedata><tw-passagedata pid="19" name="Tell him your real name" tags="" position="950,1875" size="100,100">You proudly announce:
+[[Tell him your name is Nobody]]</tw-passagedata><tw-passagedata pid="17" name="Tell him your real name" tags="" position="950,1875" size="100,100">You proudly announce:
 
 &quot;I am Odysseus, king of Ithaca!&quot;
 
@@ -196,7 +288,7 @@ When he eventually calls upon his father Poseidon for revenge, he now knows exac
 
 You suddenly realise you have made a dangerous mistake.
 
-[[Try again-&gt;y81r0m]]</tw-passagedata><tw-passagedata pid="20" name="Tell him your name is Nobody" tags="" position="1087.5,1875" size="100,100">&quot;My name is Nobody,&quot; you reply.
+[[Try again-&gt;y81r0m]]</tw-passagedata><tw-passagedata pid="18" name="Tell him your name is Nobody" tags="" position="1087.5,1875" size="100,100">&quot;My name is Nobody,&quot; you reply.
 
 The Cyclops laughs loudly before collapsing into drunken sleep.
 
@@ -207,8 +299,8 @@ Now may be your only chance to escape.
 What will you do?
 
 [[Kill the Cyclops while he sleeps]]
-[[Blind the Cyclops with a sharpened stake]]</tw-passagedata><tw-passagedata pid="21" name="y81r0m" tags="" position="962.5,2000" size="100,100">That was a mistake - try again and tell him you are nobody
-[[Tell him your name is Nobody]] </tw-passagedata><tw-passagedata pid="22" name="Kill the Cyclops while he sleeps" tags="" position="1150,2000" size="100,100">You raise your sword to kill the monster.
+[[Blind the Cyclops with a sharpened stake]]</tw-passagedata><tw-passagedata pid="19" name="y81r0m" tags="" position="962.5,2000" size="100,100">That was a mistake - try again and tell him you are nobody
+[[Tell him your name is Nobody]] </tw-passagedata><tw-passagedata pid="20" name="Kill the Cyclops while he sleeps" tags="" position="1150,2000" size="100,100">You raise your sword to kill the monster.
 
 But suddenly you realise the terrible problem:
 
@@ -216,7 +308,7 @@ If the Cyclops dies, nobody will be able to move the gigantic stone sealing the 
 
 Your men panic as they understand they would be trapped forever.
 
-[[Return to your decision-&gt;d0x8v7]]</tw-passagedata><tw-passagedata pid="23" name="Blind the Cyclops with a sharpened stake" tags="" position="1275,2000" size="100,100">You and your men drive a burning wooden stake into the Cyclops’s single eye.
+[[Return to your decision-&gt;d0x8v7]]</tw-passagedata><tw-passagedata pid="21" name="Blind the Cyclops with a sharpened stake" tags="" position="1275,2000" size="100,100">You and your men drive a burning wooden stake into the Cyclops’s single eye.
 
 The giant screams in agony.
 
@@ -233,7 +325,7 @@ The next morning, the Cyclops removes the stone and lets his sheep out to graze 
 How will you escape?
 
 [[Run past the Cyclops]]
-[[Hide beneath the sheep]]</tw-passagedata><tw-passagedata pid="24" name="Run past the Cyclops" tags="" position="1212.5,2125" size="100,100">Your sailors attempt to sprint past the cave entrance.
+[[Hide beneath the sheep]]</tw-passagedata><tw-passagedata pid="22" name="Run past the Cyclops" tags="" position="1212.5,2125" size="100,100">Your sailors attempt to sprint past the cave entrance.
 
 The Cyclops hears the footsteps immediately.
 
@@ -242,7 +334,7 @@ He grabs several men and throws them back into the cave.
 You need a more clever escape.
 
 [[Return to the escape plan-&gt;bpmz5m]]
-</tw-passagedata><tw-passagedata pid="25" name="Hide beneath the sheep" tags="" position="1337.5,2125" size="100,100">You tie your men beneath the giant sheep.
+</tw-passagedata><tw-passagedata pid="23" name="Hide beneath the sheep" tags="" position="1337.5,2125" size="100,100">You tie your men beneath the giant sheep.
 
 As the animals leave the cave, the Cyclops only feels the tops of their backs and never notices the hidden sailors.
 
@@ -255,9 +347,9 @@ But pride begins to grow inside you.
 What will you do?
 
 [[Sail away silently]]
-[[Reveal your true name to the Cyclops]]</tw-passagedata><tw-passagedata pid="26" name="d0x8v7" tags="" position="1025,2125" size="100,100"> Maybe next time you will think first.
- [[Tell him your name is Nobody]]</tw-passagedata><tw-passagedata pid="27" name="bpmz5m" tags="" position="1025,2250" size="100,100">Go back and try again.
-[[Blind the Cyclops with a sharpened stake]]</tw-passagedata><tw-passagedata pid="28" name="Sail away silently" tags="" position="1275,2250" size="100,100">You wisely remain silent as the ships sail away.
+[[Reveal your true name to the Cyclops]]</tw-passagedata><tw-passagedata pid="24" name="d0x8v7" tags="" position="1025,2125" size="100,100"> Maybe next time you will think first.
+ [[Tell him your name is Nobody]]</tw-passagedata><tw-passagedata pid="25" name="bpmz5m" tags="" position="1025,2250" size="100,100">Go back and try again.
+[[Blind the Cyclops with a sharpened stake]]</tw-passagedata><tw-passagedata pid="26" name="Sail away silently" tags="" position="1275,2250" size="100,100">You wisely remain silent as the ships sail away.
 
 But your crew begin arguing.
 
@@ -267,7 +359,7 @@ The argument distracts the fleet and dangerous winds drive your ships in circles
 
 Eventually, you once again pass the cursed island.
 
-[[Return to the escape-&gt;y3lqk7]]</tw-passagedata><tw-passagedata pid="29" name="Reveal your true name to the Cyclops" tags="" position="1400,2250" size="100,100">Unable to resist your pride, you shout across the sea:
+[[Return to the escape-&gt;y3lqk7]]</tw-passagedata><tw-passagedata pid="27" name="Reveal your true name to the Cyclops" tags="" position="1400,2250" size="100,100">Unable to resist your pride, you shout across the sea:
 
 &quot;I am Odysseus, king of Ithaca! Remember the man who blinded you!&quot;
 
@@ -279,8 +371,906 @@ Dark clouds gather over the sea.
 
 Far ahead, another island waits.
 
-[[Continue2]]</tw-passagedata><tw-passagedata pid="30" name="y3lqk7" tags="" position="1275,2375" size="100,100">Lets try this one again shall we.
-[[Hide beneath the sheep]] </tw-passagedata><tw-passagedata pid="31" name="Continue2" tags="" position="1400,2375" size="100,100"></tw-passagedata></tw-storydata>
+[[next step of our journey]]</tw-passagedata><tw-passagedata pid="28" name="y3lqk7" tags="" position="1275,2375" size="100,100">Lets try this one again shall we.
+[[Hide beneath the sheep]] </tw-passagedata><tw-passagedata pid="29" name="Lotus Fruit" tags="" position="325,1200" size="100,100">:: Lotus Fruit
+
+Your men eat the lotus fruit.
+
+At first they laugh and smile peacefully.
+
+Soon they forget about Troy... Ithaca... and home itself.
+
+“All we want is to stay here forever,” they say dreamily.
+
+The sailors refuse to return to the ships.
+
+You are forced to drag them back by force and tie them to the benches below deck.
+
+The delay angers the gods and wastes precious time.
+
+Try Again [[Investigate the island of flowers]]</tw-passagedata><tw-passagedata pid="30" name="Bag of Winds" tags="" position="1337.5,2625" size="100,100">(set: $aeolusVisited to true)
+:: Bag of Winds
+
+You thank Aeolus and carefully place the mysterious bag inside your ship.
+
+For nine days and nights the west wind carries your fleet steadily toward Ithaca.
+
+At last, the shores of home appear on the horizon.
+
+Exhausted after steering the ship for days without sleep, you finally close your eyes to rest.
+
+Your sailors gather around the bag.
+
+“Surely Aeolus gave Odysseus gold and treasure,” one whispers.
+
+“He plans to keep it for himself,” another mutters.
+
+Ignoring your warnings, they untie the silver cord.
+
+Instantly the trapped winds explode from the bag.
+
+A terrible storm tears across the sea.
+
+The ships spin helplessly backward across the ocean.
+
+When you awake, Ithaca has vanished.
+
+Days later, your battered fleet returns to Aeolus’s island.
+
+But this time the wind king refuses to help.
+
+“The gods themselves must hate you,” he declares.
+
+Your crew leaves in despair.
+
+[[Continue your journey-&gt;Laestrygonians]]</tw-passagedata><tw-passagedata pid="31" name="Refuse Aeolus" tags="" position="1462.5,2625" size="100,100">:: Refuse Aeolus
+
+You stare suspiciously at the leather bag.
+
+“No mortal should carry the power of the winds,” you declare.
+
+You refuse Aeolus’s gift and order your men back to the ships.
+
+The wind king’s expression darkens.
+
+“You reject my help?” he says coldly.
+
+Without another word, Aeolus commands the winds to rise.
+
+Moments after leaving the harbor, violent storms smash against your fleet.
+
+Massive waves scatter the ships across the sea.
+
+Several vessels disappear beneath the water.
+
+For many days your surviving sailors drift helplessly without direction.
+
+By the time calm seas return, your fleet has suffered terrible losses.
+
+You shopuld have accepted the gift
+
+[[Bag of Winds]]</tw-passagedata><tw-passagedata pid="32" name="Laestrygonians" tags="" position="825,2775" size="100,100">(set: $laestrygoniansVisited to true)
+:: Laestrygonians
+
+After leaving the island of Aeolus, your exhausted fleet sails for many more days through thick fog and cold grey seas.
+
+At last, towering cliffs rise from the water ahead.
+
+A narrow harbor opens between two giant walls of rock.
+
+The water inside is perfectly still.
+
+Many of your sailors cheer at the sight of safe shelter.
+
+But something about the place feels wrong.
+
+No birds fly overhead.
+
+No sound comes from the land beyond the cliffs.
+
+You send a small scouting party inland to search for food and speak with the island’s people.
+
+Hours later, only one terrified sailor returns.
+
+“They are giants!” he screams. “Cannibals!”
+
+Before you can react, enormous figures appear along the cliffs above the harbor.
+
+The Laestrygonians hurl massive boulders down onto the trapped ships.
+
+Wood splinters.
+
+Sailors scream.
+
+The narrow harbor becomes a death trap.
+
+Your men panic and look to you for orders.
+
+[[Keep most of the fleet inside the harbor while your own ship stays near the entrance-&gt;Fight Laestrygonians]]
+
+[[Order the entire fleet to escape immediately-&gt;Escape Laestrygonians]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Laestrygonians Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="33" name="Escape Laestrygonians" tags="" position="1212.5,2875" size="100,100">:: Escape Laestrygonians
+
+You realize the harbor is a trap.
+
+“Row for your lives!” you command.
+
+While the other ships struggle inside the narrow harbor, your own vessel cuts its ropes and backs away toward open sea.
+
+Above the cliffs, the giant Laestrygonians continue raining boulders onto the trapped fleet.
+
+Ships are smashed apart like toys.
+
+The sea fills with wreckage and desperate cries.
+
+One by one, nearly all your ships are destroyed.
+
+Only your own vessel escapes into the open ocean.
+
+Your surviving crew rows silently, horrified by the disaster they have witnessed.
+
+Though devastated by the loss of so many men, you know staying would have meant certain death.
+
+[[Continue your journey-&gt;Circe Island]]</tw-passagedata><tw-passagedata pid="34" name="Fight Laestrygonians" tags="" position="1337.5,2875" size="100,100">:: Fight Laestrygonians
+
+You refuse to abandon the harbor.
+
+“Stand and fight!” you command.
+
+Your sailors fire arrows toward the cliffs, but the giant Laestrygonians barely notice the attacks.
+
+Huge boulders crash onto the ships from above.
+
+Masts snap in half.
+
+Entire vessels sink beneath the waves.
+
+The giants wade into the harbor itself, grabbing sailors and carrying them away like dolls.
+
+Panic spreads through the fleet.
+
+By the time you finally order a retreat, it is too late.
+
+Your ships are all destroyed
+
+The survivors stare silently at the burning wreckage drifting across the sea.
+If only ypou could try again you would do it differently.
+[[Laestrygonians]] 
+</tw-passagedata><tw-passagedata pid="35" name="Circe Island" tags="" position="1212.5,3000" size="100,100">(set: $circeVisited to true)
+:: Circe Island
+
+With only one ship remaining, your exhausted crew sails onward across the dark sea.
+
+At last, you reach a heavily wooded island.
+
+Smoke rises from somewhere deep within the forest.
+
+Your sailors are desperate for food and rest.
+
+You divide the men into two groups and send one party inland to explore.
+
+Hours later, terrified survivors stumble back to the beach.
+
+“The others are gone!” one sailor cries.
+
+“There is a palace in the forest. A beautiful woman welcomed us inside and offered food and wine.”
+
+His voice trembles.
+
+“Then she touched the men with a wand... and transformed them into pigs.”
+
+The crew erupts into panic.
+
+Some beg to flee the island immediately.
+
+Others plead with you to rescue the trapped sailors.
+
+You grip your sword and consider your choices.
+
+[[Enter the forest and confront Circe-&gt;Confront Circe]]
+
+[[Abandon the transformed sailors and flee the island-&gt;Flee Circe]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Circe Island Island Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="36" name="Confront Circe" tags="" position="1075,3125" size="100,100">:: Confront Circe
+
+Though fear grips your crew, you refuse to abandon your men.
+
+Armed with your sword, you enter the dark forest alone.
+
+On the path, the god Hermes suddenly appears before you.
+
+He gives you a magical herb called moly.
+
+“This will protect you from Circe’s magic,” he says.
+
+When you reach the palace, Circe offers you enchanted food and wine just as she did the others.
+
+But the magic fails against Hermes’s herb.
+
+Furious, Circe raises her wand, but you draw your sword and force her to free your men.
+
+One by one, the transformed sailors return to human form.
+
+Circe’s anger fades, and she eventually becomes an ally instead of an enemy.
+
+For many months your crew rests safely on her island before continuing the journey home.
+
+[[Continue your journey-&gt;Underworld]]</tw-passagedata><tw-passagedata pid="37" name="Flee Circe" tags="" position="1212.5,3125" size="100,100">:: Flee Circe
+
+Fear overwhelms the crew.
+
+You decide the island is too dangerous.
+
+“Raise the sails,” you order. “We leave now.”
+
+As your ship pulls away from shore, the cries of your transformed sailors echo faintly from the forest.
+
+The remaining crew grows silent and ashamed.
+
+Soon storms begin battering the ship day after day.
+
+Food runs low.
+
+Arguments spread among the men.
+
+Many sailors whisper that the gods are punishing you for abandoning your companions.
+
+Your journey becomes darker and more hopeless than ever before.
+
+Maybe you should think again.
+
+[[Circe Island]] </tw-passagedata><tw-passagedata pid="38" name="Underworld" tags="" position="1075,3250" size="100,100">(set: $underworldVisited to true)
+:: Underworld
+
+Following Circe’s instructions, your ship sails to the far edge of the world.
+
+Dark mist covers the sea.
+
+No birds sing.
+
+No sunlight reaches the water.
+
+At last, you arrive at a silent land where the entrance to the Underworld lies hidden beside a black river.
+
+Your sailors tremble as you prepare the ritual Circe described.
+
+You pour offerings into the earth and call upon the spirits of the dead.
+
+Slowly, shadowy figures begin rising from the darkness below.
+
+Ghosts surround you on every side.
+
+Among them you recognize fallen warriors from Troy… old friends… and enemies long dead.
+
+Then a blind spirit approaches.
+
+It is the prophet Tiresias.
+
+His empty eyes seem to stare directly into your soul.
+
+“I can show you the path home,” he says, “but the journey ahead is filled with terrible dangers.”
+
+The dead continue gathering around you.
+
+Your crew panics and begs to leave immediately.
+
+What will you do?
+
+[[Listen carefully to Tiresias’s prophecy-&gt;Tiresias Prophecy]]
+
+[[Flee the Underworld before more spirits appear-&gt;Flee Underworld]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[underworld Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="39" name="Read Cyclopes Summary" tags="" position="1325,1500" size="100,100">3. Cyclops (Island of the Cyclopes)
+The Set-up: The fleet lands on a fertile, wild island neighboring the land of the Cyclopes—lawless, solitary giants who do not farm, have no government, and disregard the gods. Driven by intellectual curiosity and a desire for xenia (guest-gifts), Odysseus takes his single best ship and 12 top men to explore the mainland.
+
+The Trap: They find a massive cave filled with organized crates of cheese and pens of lambs. The crew begs Odysseus to steal the food and leave, but Odysseus insists on waiting for the owner. The owner is Polyphemus, a giant son of Poseidon. When he returns, he seals the cave mouth with a 22-ton boulder, discovers the intruders, and completely mocks the laws of hospitality. He immediately smashes two sailors against the floor and eats them raw.
+
+The Masterplan: Trapped inside (because they need the giant to move the boulder), Odysseus watches Polyphemus eat four more men over the next day. Odysseus devises a plan. He offers the giant a skin of incredibly potent, unwatered wine meant for the gods. Polyphemus drinks it greedily, asks Odysseus his name, and Odysseus replies: &quot;Nobody&quot; (Outis). In gratitude, the drunk giant promises to eat &quot;Nobody&quot; last before passing out. Odysseus and his men take a massive olive-wood stake, sharpen it, heat it in the fire, and drive it directly into Polyphemus&#39;s single eye.
+
+The Escape: Polyphemus screams in agony. When the other Cyclopes gather outside the cave asking who is killing him, Polyphemus yells, &quot;Nobody is killing me by fraud or force!&quot; Convinced it is a plague from Zeus, the neighbors leave. The next morning, Polyphemus opens the cave to let his sheep out, feeling their backs to catch the humans. Odysseus has tied his men to the bellies of the giant rams (three rams per man), escaping undetected.
+
+The Fatal Flaw (Hubris): Once safely back on his ship, Odysseus cannot resist the urge to claim his glory. He shouts his real name to the giant. Polyphemus hurls massive mountaintops at the ship, nearly beaching them, and invokes his father, Poseidon, praying that Odysseus lose all his men, return on a foreign ship, and find a house of pain.
+
+Why It Matters: This is the catalyst for the entire rest of the epic. Odysseus&#39;s pride directly incurs the wrath of Poseidon, sealing the doom of his crew.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="40" name="Read Lotus Island Summary" tags="" position="1400,1100" size="100,100">2. Lotus Island (The Lotus-Eaters)
+The Set-up: A malevolent North Wind drives the fleet off-course for nine days, completely tearing them out of the known world and into a realm of myth. They land on the coastline of the Lotus-Eaters.
+
+The Action: Needing fresh water and information, Odysseus sends a scouting party of three men (two sailors and a herald). The native population is entirely peaceful; they harbor no hostility and simply offer the scouts their local food, the lotus plant.
+
+The Climax: The lotus acts as a highly addictive, amnesiac narcotic. Upon eating it, the three scouts lose all memory of their homeland, their families, and their duty. They care only to stay forever, blissfully eating the plant.
+
+The Resolution: Odysseus realizes the psychological danger. He personally goes inland, drags the weeping, resisting men back to the ships by force, and binds them securely beneath the rowing benches. He orders an immediate evacuation before anyone else can taste the plant.
+
+Why It Matters: The Lotus-Eaters represent the temptation of oblivion and escapism. For a Greek hero, giving up nostos (the journey home) and kleos (glory/remembrance) is equivalent to a spiritual death.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="41" name="Tiresias Prophecy" tags="" position="950,3375" size="100,100">:: Tiresias Prophecy
+
+You force yourself to remain calm among the spirits of the dead.
+
+Tiresias steps closer and speaks in a hollow voice.
+
+“To reach Ithaca, you must survive many dangers still ahead.”
+
+He warns you of the Sirens, whose songs lure sailors to destruction.
+
+He warns you of Scylla and Charybdis, monsters that guard a deadly strait.
+
+Finally, he gives one final warning.
+
+“When you reach the island of the sun god Helios, do not harm his sacred cattle.”
+
+The prophet’s voice fades into the darkness.
+
+The spirits begin closing around your crew once more.
+
+Realizing the ritual is complete, you order the sailors back to the ship.
+
+The fleet escapes the Underworld before the dead can trap you there forever.
+
+[[Continue your journey-&gt;Sirens]]</tw-passagedata><tw-passagedata pid="42" name="Flee Underworld" tags="" position="1075,3375" size="100,100">:: Flee Underworld
+
+Terror overwhelms your crew as more spirits rise from the darkness.
+
+You decide the risk is too great.
+
+“Back to the ship!” you shout.
+
+The sailors flee in panic without hearing Tiresias’s warning.
+
+Your ship escapes the land of the dead, but important knowledge has been lost.
+
+Soon strange songs begin drifting across the sea.
+
+Your crew does not understand the danger ahead.
+
+Without Tiresias’s guidance, fear and confusion spread among the sailors as new horrors approach.
+
+Maybe someone else should choose the path next time. Go back and have another go.
+
+[[Underworld]] </tw-passagedata><tw-passagedata pid="43" name="Sirens" tags="" position="950,3500" size="100,100">(set: $sirensVisited to true)
+:: Sirens
+
+After escaping the Underworld, your ship sails into strangely calm seas.
+
+No wind blows.
+
+No waves crash against the hull.
+
+Then soft music drifts across the water.
+
+The sound is beautiful beyond anything you have ever heard.
+
+Some sailors stop rowing.
+
+Others stare dreamily toward distant rocks rising from the sea.
+
+Suddenly you remember Tiresias’s warning.
+
+“The Sirens,” you whisper.
+
+Circe had warned you about them as well.
+
+Their magical songs lure sailors toward the rocks, where ships are destroyed and crews die among the waves.
+
+Already your men seem enchanted by the music.
+
+You must act quickly.
+
+[[Block the sailors’ ears with wax and tie yourself to the mast-&gt;Resist Sirens]]
+
+[[Allow the crew to listen to the music-&gt;Listen Sirens]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Sirens Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="44" name="Resist Sirens" tags="" position="825,3625" size="100,100">:: Resist Sirens
+
+You order the sailors to melt wax and press it into their ears.
+
+Then you command the crew to tie you tightly to the ship’s mast.
+
+“No matter what I say,” you warn them, “do not untie me.”
+
+As the ship approaches the Sirens’ island, the music grows even more beautiful.
+
+The Sirens call directly to you.
+
+“Odysseus,” they sing, “come closer. Learn every secret of the world.”
+
+Mad with curiosity, you struggle against the ropes and scream for the sailors to release you.
+
+But the crew cannot hear your cries through the wax.
+
+They continue rowing steadily past the deadly rocks.
+
+Slowly the magical song fades into the distance.
+
+At last the ship escapes safely back into open sea.
+
+[[Continue your journey-&gt;Scylla Charybdis]]</tw-passagedata><tw-passagedata pid="45" name="Listen Sirens" tags="" position="950,3625" size="100,100">:: Listen Sirens
+
+You decide the stories about the Sirens may be exaggerated.
+
+Perhaps their songs contain wisdom that could help your journey.
+
+You allow the crew to continue listening.
+
+The music grows more beautiful with every passing moment.
+
+One by one, the sailors stop rowing entirely.
+
+Smiling dreamily, they guide the ship toward the rocky shore.
+
+Only when sharp rocks tear through the hull do the men finally realize the danger.
+
+Waves smash the ship apart.
+
+The sea fills with wreckage and desperate screams as the Sirens continue singing from the cliffs above.
+
+Very few sailors survive the disaster. Try resisting next time.
+
+[[Sirens]]</tw-passagedata><tw-passagedata pid="46" name="Scylla Charybdis" tags="" position="825,3750" size="100,100">(set: $scyllaVisited to true)
+:: Scylla Charybdis
+
+Dark cliffs rise ahead as your ship enters a narrow strait.
+
+The sea churns violently between the rocks.
+
+On one side, a giant whirlpool roars, swallowing huge amounts of water before spitting them back into the air.
+
+On the opposite cliff, something massive moves within a hidden cave.
+
+You remember Circe’s warning.
+
+The whirlpool is Charybdis, capable of dragging entire ships beneath the sea.
+
+The creature in the cave is Scylla, a six-headed monster that snatches sailors directly from the deck.
+
+Your terrified crew looks to you for guidance.
+
+Neither path is safe.
+
+You must choose quickly.
+
+[[Steer closer to Scylla and avoid the whirlpool-&gt;Pass Scylla]]
+
+[[Steer toward Charybdis and avoid the monster-&gt;Pass Charybdis]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Scylla Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="47" name="Pass Scylla" tags="" position="700,3875" size="100,100">:: Pass Scylla
+
+With a heavy heart, you steer the ship closer to Scylla’s cliff.
+
+You know some men may die, but the ship itself might survive.
+
+The sailors row desperately as the dark cave looms overhead.
+
+Suddenly six terrible heads shoot from the shadows.
+
+Scylla snatches six screaming sailors from the deck before disappearing back into the rocks.
+
+Your crew cries out in horror, but the ship continues moving forward.
+
+Moments later, the vessel escapes the narrow strait and reaches safer water.
+
+Though devastated by the loss of your men, you know the entire ship would likely have been destroyed by Charybdis.
+
+[[Continue your journey-&gt;Helios Island]]</tw-passagedata><tw-passagedata pid="48" name="Pass Charybdis" tags="" position="825,3875" size="100,100">:: Pass Charybdis
+
+You decide to risk the whirlpool instead of facing the monster.
+
+“Row hard!” you command.
+
+At first the ship seems to avoid the swirling water.
+
+Then the sea suddenly pulls the vessel sideways.
+
+The whirlpool begins dragging the entire ship inward.
+
+Sailors scream as oars snap and waves crash across the deck.
+
+Though the crew fights desperately, the current is too strong.
+
+The ship barely escapes destruction, but terrible damage is done.
+
+Several sailors are swept into the sea and vanish beneath the black water.
+
+The surviving crew rows onward in terrified silence.
+
+You can continue knowing you made the wrong choice.
+
+[[Continue your journey-&gt;Helios Island]]</tw-passagedata><tw-passagedata pid="49" name="Helios Island" tags="" position="700,4000" size="100,100">(set: $thrinaciaVisited to true)
+:: Helios Island
+
+After surviving Scylla and Charybdis, your battered ship reaches a green island filled with grazing cattle.
+
+The exhausted crew cheers at the sight of food.
+
+But immediately you remember Tiresias’s warning from the Underworld.
+
+“These cattle belong to Helios, god of the sun. Do not harm them.”
+
+Dark storm clouds gather overhead as your ship lands on the shore.
+
+You order the sailors to swear that no one will touch the sacred animals.
+
+At first the crew obeys.
+
+But days pass.
+
+Powerful storms trap the ship on the island.
+
+Food supplies begin running low.
+
+The starving sailors grow desperate.
+
+One night, while you sleep, several crew members secretly gather together.
+
+“We will die if we do nothing,” one whispers.
+
+The men stare hungrily toward the sacred cattle grazing nearby.
+
+What will happen?
+
+[[The starving crew kills the sacred cattle-&gt;Kill Cattle]]
+
+[[The crew obeys the warning and protects the cattle-&gt;Protect Cattle]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Helios Summary]]&lt;/span&gt;
+
+</tw-passagedata><tw-passagedata pid="50" name="Protect Cattle" tags="" position="575,4125" size="100,100">:: Protect Cattle
+
+Though hunger torments the crew, you force the sailors to obey Tiresias’s warning.
+
+“No meal is worth the anger of the gods,” you declare.
+
+But the crew mutiny and the journey is over. Surely the anger of the gods would have been better.
+
+[[Helios Island]] </tw-passagedata><tw-passagedata pid="51" name="Kill Cattle" tags="" position="700,4125" size="100,100">:: Kill Cattle
+
+While you sleep, the starving sailors finally give in to desperation.
+
+Ignoring the warnings of Tiresias and Circe, they kill several of Helios’s sacred cattle.
+
+Huge fires burn across the beach as the crew greedily devours the forbidden feast.
+
+But terrible signs appear immediately.
+
+The meat twists upon the spits.
+
+The hides crawl across the ground as though still alive.
+
+Far above the clouds, Helios watches in fury.
+
+At last the storms end and your ship sails back into open sea.
+
+For a brief moment the crew believes they have escaped punishment.
+
+Then the sky darkens.
+
+Zeus hurls a massive thunderbolt directly into the ship.
+
+Wood explodes apart.
+
+The sea swallows the vessel whole.
+
+One by one, your sailors vanish beneath the waves.
+
+Only you survive, clinging to broken wreckage as the ocean carries you away alone.
+
+[[Continue your journey-&gt;Calypso Island]]</tw-passagedata><tw-passagedata pid="52" name="Calypso Island" tags="" position="575,4250" size="100,100">(set: $calypsoVisited to true)
+:: Calypso Island
+
+Alone upon a piece of broken wreckage, you drift across the endless sea for many days.
+
+At last, waves carry you onto a beautiful island filled with forests, waterfalls, and flowers.
+
+Exhausted and barely alive, you collapse upon the shore.
+
+When you awaken, a woman stands beside you.
+
+She is Calypso, a powerful goddess who lives alone upon the island.
+
+Calypso cares for your wounds and welcomes you into her home.
+
+Days become weeks.
+
+Weeks become years.
+
+Though the island is peaceful and beautiful, your thoughts constantly return to Ithaca, your wife Penelope, and your son Telemachus.
+
+One evening, Calypso speaks softly beside the fire.
+
+“Stay here with me forever,” she says. “I can make you immortal. You will never suffer again.”
+
+Part of you longs for rest after so many years of pain and loss.
+
+But another part still longs for home.
+
+What will you do?
+
+[[Remain on the island with Calypso-&gt;Stay Calypso]]
+
+[[Insist on leaving and continuing your journey home-&gt;Leave Calypso]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Calypso Island Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="53" name="Stay Calypso" tags="" position="450,4375" size="100,100">:: Stay Calypso
+
+The years of suffering and loss have exhausted you.
+
+At last, you accept Calypso’s offer.
+
+You remain upon the beautiful island where no wars, monsters, or storms can ever reach you again.
+
+Calypso grants you eternal youth and immortality.
+
+The seasons pass peacefully beside the sea.
+
+Yet deep within your heart, memories of Ithaca never fully disappear.
+
+Far away, your wife Penelope and your son Telemachus continue waiting for a return that will never come.
+
+Though your suffering ends, your journey home is abandoned forever.
+
+[[The End]]</tw-passagedata><tw-passagedata pid="54" name="Leave Calypso" tags="" position="575,4375" size="100,100">:: Leave Calypso
+
+Though Calypso offers peace and immortality, your heart still longs for Ithaca.
+
+Every day you sit beside the shore staring across the sea toward home.
+
+At last the goddess Athena pleads your case before Zeus.
+
+The king of the gods sends Hermes to Calypso’s island with a command:
+
+Odysseus must finally be released.
+
+Sadly, Calypso obeys.
+
+She helps you build a raft and provides food, water, and supplies for the voyage.
+
+Before you leave, she warns you that the seas ahead remain dangerous.
+
+With one final look at the island, you sail back into the open ocean toward your homeland.
+
+[[Continue your journey-&gt;Phaeacians]]</tw-passagedata><tw-passagedata pid="55" name="Phaeacians" tags="" position="575,4500" size="100,100">(set: $phaeaciansVisited to true)
+:: Phaeacians
+
+After leaving Calypso’s island, you sail alone across the sea upon a small raft.
+
+For many days the journey goes well.
+
+Then suddenly Poseidon, god of the sea, spots you crossing the ocean.
+
+Still furious over the blinding of the Cyclops Polyphemus, he unleashes a terrible storm.
+
+Massive waves shatter your raft apart.
+
+You barely survive, clinging to driftwood as the sea hurls you toward another distant shore.
+
+At last you collapse upon a beach and fall asleep beneath a pile of leaves.
+
+The next morning, voices awaken you.
+
+A young princess named Nausicaa and her servants stand nearby.
+
+Though startled by your appearance, Nausicaa kindly offers help.
+
+She explains that you have reached the land of the Phaeacians, famous sailors favored by the gods.
+
+You now have a chance to finally return home.
+
+What will you do?
+
+[[Seek help from the Phaeacian king and queen-&gt;Phaeacian Help]]
+
+[[Avoid the palace and continue alone-&gt;Avoid Phaeacians]]
+
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Phaecian Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="56" name="The End" tags="" position="450,4500" size="100,100">You may wish to try this again
+
+[[Calypso Island]] </tw-passagedata><tw-passagedata pid="57" name="Phaeacian Help" tags="" position="450,4625" size="100,100">:: Phaeacian Help
+
+Following Nausicaa’s advice, you travel to the palace of King Alcinous and Queen Arete.
+
+The Phaeacians welcome you warmly with food, music, and games.
+
+At first you hide your identity, but during a great feast a bard begins singing about the Trojan War.
+
+Memories overwhelm you, and tears fill your eyes.
+
+Seeing your grief, King Alcinous gently asks who you truly are.
+
+At last you reveal yourself:
+
+“I am Odysseus of Ithaca.”
+
+The hall falls silent.
+
+The Phaeacians listen in amazement as you recount your long journey through monsters, storms, and distant lands.
+
+Moved by your suffering, the king promises to help you return home at last.
+
+That night the finest Phaeacian ship carries you sleeping across the sea toward Ithaca.
+
+[[Continue your journey-&gt;Ithaca Return]]</tw-passagedata><tw-passagedata pid="58" name="Avoid Phaeacians" tags="" position="575,4625" size="100,100">:: Avoid Phaeacians
+
+Though Nausicaa offers help, you no longer trust strangers or the kindness of unfamiliar lands.
+
+You avoid the palace and continue traveling alone along the coast.
+
+Without a proper ship, food, or supplies, survival quickly becomes difficult.
+
+Storms batter the shoreline for many days.
+
+Exhaustion and loneliness weigh heavily upon you.
+
+At last you realize that even the greatest heroes sometimes need the help of others.
+
+Maybe you should go back and seek help.
+
+[[Continue your journey-&gt;Phaeacians]]</tw-passagedata><tw-passagedata pid="59" name="Ithaca Return" tags="" position="450,4750" size="100,100">(set: $ithacaVisited to true)
+:: Beggar Disguise
+
+Disguised as an old beggar, you quietly enter your own palace.
+
+None of the suitors recognize you.
+
+They mock and insult you while continuing their endless feasting.
+
+Only your loyal dog Argos seems to know the truth.
+
+Too old and weak to rise, Argos wags his tail one final time before dying peacefully.
+
+Later that night, you secretly reunite with Telemachus.
+
+Together you begin planning revenge against the suitors.
+
+The next day Penelope announces a contest.
+
+Any man who can string Odysseus’s great bow and shoot an arrow through twelve axe heads will win her hand in marriage.
+
+One by one, the suitors fail.
+
+At last the old beggar asks to try.
+
+The hall erupts with laughter.
+
+Then, effortlessly, you string the bow.
+
+The arrow flies cleanly through all twelve axes.
+
+Slowly you stand tall as Athena removes your disguise.
+
+The laughter dies instantly.
+
+“I am Odysseus, king of Ithaca,” you declare.
+
+Fear spreads through the hall.
+
+With Telemachus fighting beside you, the suitors are finally defeated and your kingdom is reclaimed.
+
+At long last, after years of war, storms, monsters, and loss, you are reunited with Penelope and your home.
+
+Your long journey is finally over.
+
+[[The End]]</tw-passagedata><tw-passagedata pid="60" name="Read Laestrygonians Summary" tags="" position="1900,2825" size="100,100">5. Laestrygonians 
+The Set-up: After six days of rowing without wind, they reach Telepylos, a city with a narrow, cliff-locked harbor.
+
+The Trap: Eleven of Odysseus&#39;s captains mistakenly sail deep into the harbor, mooring their ships close together. Odysseus, suspicious of the tight terrain, anchors his own ship outside the harbor, securing it to a cliffside rock. He sends three scouts to investigate.
+
+The Slaughter: The scouts meet a giant princess who leads them to her father, King Antiphates. The King immediately seizes one scout and eats him. Thousands of Laestrygonians (cannibalistic giants) rush to the cliffs. They throw massive boulders down upon the crammed, defenseless fleet, splintering the ships. They spear the drowning sailors like fish to take them home for dinner.
+
+The Escape: Odysseus draws his sword, cuts the anchor rope of his isolated ship, and commands his remaining crew to row for their lives. They escape, but eleven of his twelve ships are completely destroyed, and hundreds of men are lost.
+
+Why It Matters: This is the single most devastating physical loss Odysseus suffers, reducing his grand fleet to a single ship and a fraction of his army.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="61" name="Read Circe Island Island Summary" tags="" position="1925,3075" size="100,100">6. Circe 
+The Set-up: Heavily grieving, the single remaining ship reaches Aeaea. Odysseus kills a massive stag to feed his men, then divides the crew into two groups of 22 to explore. Eurylochus leads one group inland.
+
+The Sorcery: They find a stone palace surrounded by strangely tame wolves and lions that fawn over them like dogs. Inside, the beautiful witch-goddess Circe is singing and weaving. She invites them in; only Eurylochus stays outside, sensing a trap. Circe feeds the men a meal of barley, honey, cheese, and wine drugged with a potion that makes them forget home. She then strikes them with her wand, transforming them into swine, though their human minds remain trapped inside.
+
+The Counter-Strategy: Eurylochus runs back to the ship in terror. Odysseus equips his bronze sword and bows to go rescue them alone. On the path, the god Hermes appears to him in the guise of a young man. Hermes gives Odysseus a magical, black-rooted white flower called moly, which immunizes him against Circe’s drugs. He instructs Odysseus to draw his sword when she raises her wand, and force her to swear an oath not to harm him.
+
+The Resolution: The plan works perfectly. When Circe&#39;s magic fails, she falls to her knees in awe, recognizing Odysseus from a prophecy. She restores his men back to human form (making them younger and taller than before). Odysseus and his crew stay on her island for a full year, living in luxury and indulgence. When his men finally convince him it is time to leave, Circe tells him he must first navigate the literal boundaries of life and death by visiting the Underworld to get directions from Tiresias.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="62" name="underworld Summary" tags="" position="1900,3300" size="100,100">7. The Underworld (Kingdom of the Dead)
+The Set-up: Following Circe’s complex instructions, Odysseus sails to the dark edge of the world (the Cimmerian lands) where the Rivers of Fire and Lamentation meet. He digs a trench and sacrifices black ewes, pouring their blood into the pit to attract the ghosts of the dead, who cannot speak truth until they drink the blood.
+
+The Encounters:
+
+Elpenor: The first ghost is a young crewman who, drunk the night before departure from Circe&#39;s island, fell off her roof and broke his neck. His body was left unburied. He begs Odysseus for a proper burial so his soul can rest.
+
+Tiresias: The blind prophet drinks the blood and delivers his prophecy. He warns that Poseidon is hunting them. He states that if the men leave the Cattle of the Sun unharmed on Thrinacia, they will all reach home. If they harm them, the ship and crew will be destroyed, and Odysseus will arrive home alone, in disguise, to find his house ruined by suitors.
+
+Anticleia: Odysseus&#39;s mother. He is devastated to see her, as she was alive when he left for Troy. She tells him she died of sheer heartbreak waiting for him, and that his father Laertes is wasting away in grief. Odysseus tries to hug her three times, but his arms pass through her like smoke.
+
+The Heroes: He speaks with Agamemnon (who recounts how his own wife murdered him upon his return), Achilles (who declares he would rather be a poor slave on earth than king of all the dead), and Ajax (who still refuses to speak to Odysseus over a past grudge).
+
+Why It Matters: This journey shifts the narrative from a physical adventure to a profound spiritual confrontation with mortality and the consequences of war.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="63" name="Read Sirens Summary" tags="" position="1950,3550" size="100,100">8. Sirens
+The Set-up: Odysseus returns briefly to Aeaea to bury Elpenor. Circe gives him explicit strategic advice on how to survive the next three terrors. The first are the Sirens, creatures who sit in a meadow full of rotting skeletons, singing songs that entrance sailors into throwing themselves into the sea.
+
+The Action: As they approach the Sirens&#39; island, the wind dies down. Odysseus softens blocks of beeswax and kneads them into the ears of all his crewmen so they are completely deaf to the sound.
+
+The Test: Desiring the knowledge the Sirens possess (they claim to know everything that happened at Troy), Odysseus orders his men to bind him upright against the ship&#39;s mast. He commands them that if he begs to be released, they must wrap him in even more ropes.
+
+The Climax: When the Sirens sing, their music is so hauntingly beautiful and psychologically manipulative that Odysseus screams and flails, ordering his men to untie him. True to their orders, Eurylochus and Perimedes jump up and bind him even tighter until they are safely past the island.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="64" name="Read Scylla Summary" tags="" position="1875,3775" size="100,100">9. Scylla &amp; Charybdis
+The Set-up: Immediately after the Sirens, they encounter a terrifying strait. On one side is Charybdis, a giant creature beneath the water that sucks in the sea three times a day and violently spits it back up, creating a whirlpool capable of destroying entire fleets. On the opposite side is a sheer cliff where Scylla lives—a monster with twelve deformed feet, six incredibly long necks, and six heads filled with triple rows of fangs.
+
+The Decision: Circe advised Odysseus not to put on armor or try to fight, as Scylla is immortal and cannot be defeated; fighting her will only waste time and cost more lives. She tells him to hug Scylla&#39;s cliff and row past as fast as possible, because losing six men is better than losing the entire ship to Charybdis.
+
+The Execution: Odysseus conceals the full truth from his men to prevent them from panicking and abandoning their oars. Driven by his heroic ego, he disobeys Circe’s advice and puts on his armor, grabbing two spears.
+
+The Tragedy: As they watch Charybdis boil and churn the sea on the left, Scylla strikes from the right. She swoops down and snatches six of Odysseus’s best sailors. As she hoists them up to her cave to devour them, the men scream Odysseus&#39;s name, crying out for help. Odysseus can only watch in horror.
+
+Why It Matters: This is a harsh lesson in command: Odysseus is forced to willingly sacrifice a portion of his crew to save the rest, a stark contrast to his usual attempts to save everyone.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="65" name="Read Helios Summary" tags="" position="1850,4050" size="100,100">10. Thrinacia (The Cattle of Helios)
+The Set-up: The exhausted survivors arrive at Thrinacia. Remembering the warnings of both Tiresias and Circe, Odysseus orders his men to bypass the island entirely. Eurylochus leads a near-mutiny, arguing that the men are physically broken and need to rest on shore for one night. Odysseus relents, but forces every man to swear a sacred oath never to touch the cattle of Helios.
+
+The Crisis: The next day, the South Wind begins to blow relentlessly and does not stop for a full month. The crew consumes all the rations given by Circe, and then resort to hunting small birds and fishing, but they are slowly starving.
+
+The Crime: One day, Odysseus goes inland alone to pray to the gods for a favorable wind. The gods put him into a deep sleep. Seizing the opportunity, Eurylochus makes a speech to the crew, arguing that starvation is the most cowardly, miserable way to die. He proposes they slaughter the best of the cattle, make a magnificent sacrifice to the gods to appease them, and promise to build Helios a grand temple once they get back to Ithaca. They slaughter the sacred cows.
+
+The Omens: When Odysseus wakes up and smells the roasting meat, he panics. The gods send horrific portents: the flayed hides of the cows begin to crawl across the ground, and the meat on the spits begins to low and moo.
+
+The Destruction: After six days of feasting, the wind changes, and they set sail. As soon as they lose sight of land, Zeus whips up a cataclysmic storm. A bolt of lightning strikes the mast, crushing the helmsman’s skull. A massive wave breaks the ship apart. All of Odysseus&#39;s remaining crew members drown in the sea. Odysseus constructs a makeshift raft from the keel and mast. The current drives him right back to Charybdis, where he survives only by jumping up and hanging onto a wild fig tree like a bat for hours until the whirlpool spits his raft back up.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="66" name="Read Calypso Island Summary" tags="" position="1575,4250" size="100,100">11. Calypso (Ogygia)
+The Set-up: Odysseus drifts on his raft for nine days until he washes ashore on Ogygia, the isolated paradise island inhabited by the beautiful nymph Calypso.
+
+The Captivity: Calypso rescues him, nurses him back to health, and falls deeply in love with him. She holds him prisoner in her caves for seven years. She offers him total immortality and eternal youth if he agrees to stay and be her husband.
+
+The Reality: Despite the absolute luxury, stunning nature, and divine intimacy, Ogygia is a golden cage. Odysseus spends every single day sitting on the rocky shore, weeping, staring out at the barren sea, completely consumed by nostos (the longing for home) and his wife Penelope.
+
+The Release: Athena takes advantage of Poseidon&#39;s absence at a feast in Ethiopia to beg Zeus to free Odysseus. Zeus agrees and sends Hermes to Ogygia. Hermes commands Calypso to let him go under threat of Zeus&#39;s wrath. Calypso bitterly complies, providing Odysseus with tools to build a sturdy timber raft, as well as clothing and provisions.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="67" name="Read Phaecian Summary" tags="" position="1600,4625" size="100,100">12. Phaeacians (Scheria)
+The Set-up: Odysseus sails his raft for 18 days until he sees Scheria, the island of the Phaeacians. Poseidon catches sight of him and generates a monstrous storm that shatters the raft. Odysseus is saved by the sea-goddess Ino (Leucothea), who gives him a magical veil that prevents him from drowning. He swims for two agonizing days, scales a jagged rocky coast, and collapses naked and exhausted in a bed of leaves.
+
+The Discovery: The next morning, Princess Nausicaa (daughter of King Alcinous) comes to the river to wash clothes. Odysseus wakes up, covers his nakedness with an olive branch, and uses highly diplomatic rhetoric to win her trust. She gives him clothes and tells him how to approach her mother, Queen Arete.
+
+The Reveal: The Phaeacians harbor him blindly, following the extreme codes of xenia. During a grand feast, the court bard Demodocus sings of the Trojan War and the quarrel between Odysseus and Achilles. Odysseus breaks down in tears, hiding his face in his purple cloak. King Alcinous notices, stops the music, and asks his guest who he is. Odysseus finally stands and states: &quot;I am Odysseus, son of Laertes...&quot; He then narrates his entire ten-year journey (Adventures 1 through 11) to the captivated court.
+
+The Reward: Deeply moved and recognizing his nobility, Alcinous gives Odysseus more treasures of bronze, gold, and woven clothing than he would have won at Troy. They place him on one of their magically fast, crewless ships. Odysseus falls into a deep, death-like sleep as the ship slices through the water toward home.
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="68" name="Read Aeolus Summary" tags="" position="1725,2350" size="100,100">4. Aeolus (Aeolia)
+The Set-up: The Greeks sail to Aeolia, a floating island enclosed by a wall of bronze, ruled by Aeolus, the god/warden of the winds. Aeolus treats them with flawless hospitality for a month.
+
+The Gift: To help Odysseus get home, Aeolus binds all the chaotic, destructive winds of the world into a tight bag made of ox-hide, securing it with a silver cord. He leaves only the gentle West Wind (Zephyrus) free to guide Odysseus’s fleet straight to Ithaca.
+
+The Betrayal: For nine days and nights, Odysseus personally mans the ship&#39;s tiller without sleeping. Finally, the shores of Ithaca are so close they can see the inhabitants tending watch-fires. Overcome by exhaustion, Odysseus falls into a deep sleep. The crew, fueled by jealousy and suspicion, begins whispering that the bag contains secret treasures of gold and silver given to Odysseus alone. They cut the silver cord.
+
+The Fallout: The violent winds explode from the bag, creating a massive tempest that violently sucks the entire fleet backward across the sea, all the way to Aeolia. Odysseus goes to Aeolus to beg for help a second time, but Aeolus realizes that Odysseus must be intensely cursed by the gods. He curses Odysseus and kicks him off the island.
+
+Why It Matters: This highlights the complete breakdown of trust between Odysseus and his men, emphasizing that their own greed and lack of self-control—not just fate—keeps them from home.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="69" name="Read the summary Cicones" tags="" position="1425,775" size="100,100">
+
+1. Cicones (Ismarus)
+The Set-up: After sacking Troy, Odysseus’s twelve ships are blown across the Aegean Sea to Ismarus, the stronghold of the Cicones (allies of Troy).
+
+The Action: The Greeks launch a surprise amphibious assault, sacking the city, killing the men, and capturing the women and plunder. Odysseus behaves like a responsible commander, ordering his men to divide the spoils fairly and retreat immediately before reinforcements arrive. However, his crew is flushed with the easy victory at Troy; they mutiny, drinking heavily on the beach and slaughtering countless sheep and cattle.
+
+The Climax &amp; Tragedy: While the Greeks are drunk, the surviving Cicones flee inland and rally their neighbors—a much larger, professional army trained to fight on horseback or foot. At dawn, they launch a massive counterattack. The Greeks are driven back to their ships in a brutal, day-long battle.
+
+The Damage: Odysseus loses exactly six men from every ship (72 men in total) before escaping into a violent storm sent by Zeus.
+
+Why It Matters: This is the first demonstration of the crew’s fatal flaw: lack of discipline, greed, and a refusal to listen to Odysseus’s strategic commands.
+
+(link:&quot;Back&quot;)[(undo:)]</tw-passagedata><tw-passagedata pid="70" name="Footer" tags="footer" position="950,4675" size="100,100">&lt;div class=&quot;mapbutton&quot;&gt;
+
+[[🗺 Voyage Map-&gt;WorldMap]]
+
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="WorldMap" tags="" position="950,4800" size="100,100">&lt;div class=&quot;mapcontainer&quot;&gt;
+
+&lt;img src=&quot;images/odyssey-map.jpeg&quot; width=&quot;100%&quot;&gt;
+
+(if: $troyVisited)[
+
+&lt;div class=&quot;troydot&quot;&gt;&lt;/div&gt;
+
+]
+
+&lt;/div&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
