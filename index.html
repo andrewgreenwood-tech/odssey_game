@@ -246,7 +246,7 @@ How to play:
 [[Begin the voyage]]
 
 </tw-passagedata><tw-passagedata pid="2" name="Begin the voyage" tags="" position="900,500" size="100,100">You stand on the shores of ruined Troy.
-<<set $troyVisited = true>>
+(set: $troyVisited to true)
 
 &lt;img src=&quot;images/onthe shores.png&quot; width=&quot;700&quot;&gt;
 
@@ -272,7 +272,7 @@ A violent storm crashes into the fleet, scattering your ships across unknown wat
 
 You are no longer on the path home.
 
-[[Return to the shore of Troy-&gt;Start]]</tw-passagedata><tw-passagedata pid="4" name="Raid the nearby land of the Cicones for supplies" tags="" position="900,1000" size="100,100"><<set $ciconesVisited = true>>
+[[Return to the shore of Troy-&gt;Start]]</tw-passagedata><tw-passagedata pid="4" name="Raid the nearby land of the Cicones for supplies" tags="" position="900,1000" size="100,100">&lt;&lt;set $ciconesVisited = true&gt;&gt;
 &lt;img src=&quot;images/cicones.png&quot; width=&quot;700&quot;&gt;
 Your men raid the land of the Cicones, stealing food, gold, and wine.
 
@@ -328,7 +328,7 @@ What will you do?
 
 [[Allow them to stay and rest]]
 
-&lt;span class=&quot;summaryLink&quot;&gt;[[Read Lotus Island Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="8" name="Island of the Lotus Eaters" tags="" position="400,1450" size="100,100">(set: $lotusVisited to true)
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Lotus Island Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="8" name="Island of the Lotus Eaters" tags="" position="400,1450" size="100,100">&lt;&lt;set $lotusVisited = true&gt;&gt;
 You drag the enchanted sailors back to the ships by force.
 
 They scream and beg to stay, but you order the fleet to leave immediately.
@@ -347,7 +347,7 @@ Eventually, your journey completely falls apart.
 
 You realise you must leave this island immediately before all hope is lost.
 
-[[Return to the shore after the Cicones-&gt;Continue]]</tw-passagedata><tw-passagedata pid="10" name="Continue to the Island of the Cyclopes" tags="" position="650,1500" size="100,100">(set: $cyclopsVisited to true)
+[[Return to the shore after the Cicones-&gt;Continue]]</tw-passagedata><tw-passagedata pid="10" name="Continue to the Island of the Cyclopes" tags="" position="650,1500" size="100,100">&lt;&lt;set $cyclopsVisited = true&gt;&gt;
 &lt;img src=&quot;images/cyclops.png&quot; width=&quot;700&quot;&gt;
 You arrive at a rocky island scattered with giant sheep and enormous caves.
 
@@ -368,7 +368,7 @@ Huge waves force the ships away from the island.
 
 The crew must choose another path.
 
-[[Continue]]</tw-passagedata><tw-passagedata pid="12" name="Take the supplies and leave immediately" tags="" position="587.5,1625" size="100,100">You quickly load the supplies onto the ships and sail away.
+[[Continue]]</tw-passagedata><tw-passagedata pid="12" name="Take the supplies and leave immediately" tags="" position="600,1625" size="100,100">You quickly load the supplies onto the ships and sail away.
 
 Your men celebrate the easy victory.
 
@@ -397,7 +397,7 @@ Your terrified crew beg for escape.
 What will you do?
 
 [[Attack the Cyclops immediately]]
-[[Speak calmly and offer him wine]]</tw-passagedata><tw-passagedata pid="14" name="83fu81" tags="" position="587.5,1750" size="100,100">You made a hasty decision and should think again.
+[[Speak calmly and offer him wine]]</tw-passagedata><tw-passagedata pid="14" name="83fu81" tags="" position="600,1750" size="100,100">You made a hasty decision and should think again.
 [[Stay and wait to meet the cave owner]] </tw-passagedata><tw-passagedata pid="15" name="Attack the Cyclops immediately" tags="" position="775,1750" size="100,100">Your men charge forward with swords and spears.
 
 But the Cyclops is enormous.
@@ -439,7 +439,7 @@ Now may be your only chance to escape.
 What will you do?
 
 [[Kill the Cyclops while he sleeps]]
-[[Blind the Cyclops with a sharpened stake]]</tw-passagedata><tw-passagedata pid="19" name="y81r0m" tags="" position="962.5,2000" size="100,100">That was a mistake - try again and tell him you are nobody
+[[Blind the Cyclops with a sharpened stake]]</tw-passagedata><tw-passagedata pid="19" name="y81r0m" tags="" position="962.5,2000" size="100,100">That was a mistake - try again and tell him you are Nobody
 [[Tell him your name is Nobody]] </tw-passagedata><tw-passagedata pid="20" name="Kill the Cyclops while he sleeps" tags="" position="1150,2000" size="100,100">You raise your sword to kill the monster.
 
 But suddenly you realise the terrible problem:
@@ -471,7 +471,7 @@ The Cyclops hears the footsteps immediately.
 
 He grabs several men and throws them back into the cave.
 
-You need a more clever escape.
+You need a smarter escape.
 
 [[Return to the escape plan-&gt;bpmz5m]]
 </tw-passagedata><tw-passagedata pid="23" name="Hide beneath the sheep" tags="" position="1337.5,2125" size="100,100">You tie your men beneath the giant sheep.
@@ -511,7 +511,7 @@ Dark clouds gather over the sea.
 
 Far ahead, another island waits.
 
-[[Aeolus]]</tw-passagedata><tw-passagedata pid="28" name="y3lqk7" tags="" position="1275,2375" size="100,100">Lets try this one again shall we.
+[[Aeolus]]</tw-passagedata><tw-passagedata pid="28" name="y3lqk7" tags="" position="1275,2375" size="100,100">Let&#39;s try this one again shall we.
 [[Hide beneath the sheep]] </tw-passagedata><tw-passagedata pid="29" name="Lotus Fruit" tags="" position="325,1200" size="100,100">:: Lotus Fruit
 
 Your men eat the lotus fruit.
@@ -528,7 +528,7 @@ You are forced to drag them back by force and tie them to the benches below deck
 
 The delay angers the gods and wastes precious time.
 
-Try Again [[Investigate the island of flowers]]</tw-passagedata><tw-passagedata pid="30" name="Bag of Winds" tags="" position="1337.5,2625" size="100,100">(set: $aeolusVisited to true)
+Try Again [[Investigate the island of flowers]]</tw-passagedata><tw-passagedata pid="30" name="Bag of Winds" tags="" position="1337.5,2625" size="100,100">&lt;&lt;set $aeolusVisited = true&gt;&gt;
 :: Bag of Winds
 
 You thank Aeolus and carefully place the mysterious bag inside your ship.
@@ -589,7 +589,7 @@ By the time calm seas return, your fleet has suffered terrible losses.
 
 You should have accepted the gift
 
-[[Bag of Winds]]</tw-passagedata><tw-passagedata pid="32" name="Laestrygonians" tags="" position="825,2775" size="100,100">(set: $laestrygoniansVisited to true)
+[[Bag of Winds]]</tw-passagedata><tw-passagedata pid="32" name="Laestrygonians" tags="" position="825,2775" size="100,100">&lt;&lt;set $laestrygoniansVisited = true&gt;&gt;
 :: Laestrygonians
 
 After leaving the island of Aeolus, your exhausted fleet sails for many more days through thick fog and cold grey seas.
@@ -630,7 +630,7 @@ Your men panic and look to you for orders.
 
 [[Get out of there as quick as you can-&gt;Be cautious of Laestrygonians]]
 
-&lt;span class=&quot;summaryLink&quot;&gt;[[Read Laestrygonians Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="33" name="Be cautious of Laestrygonians" tags="" position="1212.5,2875" size="100,100">:: Escape Laestrygonians
+&lt;span class=&quot;summaryLink&quot;&gt;[[Read Laestrygonians Summary]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="33" name="Be cautious of Laestrygonians" tags="" position="1225,2875" size="100,100">:: Escape Laestrygonians
 
 The harbor looks calm and protected, but something feels wrong.
 
@@ -671,7 +671,7 @@ Your ships are all destroyed
 The survivors stare silently at the burning wreckage drifting across the sea.
 If only ypou could try again you would do it differently.
 [[Laestrygonians]] 
-</tw-passagedata><tw-passagedata pid="35" name="Circe Island" tags="" position="1212.5,3000" size="100,100">(set: $circeVisited to true)
+</tw-passagedata><tw-passagedata pid="35" name="Circe Island" tags="" position="1212.5,3000" size="100,100">&lt;&lt;set: $circeVisited = true&gt;&gt;
 :: Circe Island
 &lt;img src=&quot;images/circes.png&quot; width=&quot;700&quot;&gt;
 With only one ship remaining, your exhausted crew sails onward across the dark sea.
@@ -754,7 +754,7 @@ Your journey becomes darker and more hopeless than ever before.
 
 Maybe you should think again.
 
-[[Circe Island]] </tw-passagedata><tw-passagedata pid="38" name="Underworld" tags="" position="1075,3250" size="100,100">(set: $underworldVisited to true)
+[[Circe Island]] </tw-passagedata><tw-passagedata pid="38" name="Underworld" tags="" position="1075,3250" size="100,100">&lt;&lt;set $underworldVisited = true&gt;&gt;
 :: Underworld
 &lt;img src=&quot;images/the underworld.png&quot; width=&quot;700&quot;&gt;
 Following Circe’s instructions, your ship sails to the far edge of the world.
@@ -863,7 +863,7 @@ Without Tiresias’s guidance, fear and confusion spread among the sailors as ne
 
 Maybe someone else should choose the path next time. Go back and have another go.
 
-[[Underworld]] </tw-passagedata><tw-passagedata pid="43" name="Sirens" tags="" position="950,3500" size="100,100">(set: $sirensVisited to true)
+[[Underworld]] </tw-passagedata><tw-passagedata pid="43" name="Sirens" tags="" position="950,3500" size="100,100">&lt;&lt;set $sirensVisited = true&gt;&gt;
 :: Sirens
 &lt;img src=&quot;images/sirens.png&quot; width=&quot;700&quot;&gt;
 After escaping the Underworld, your ship sails into strangely calm seas.
@@ -942,7 +942,7 @@ The sea fills with wreckage and desperate screams as the Sirens continue singing
 
 Very few sailors survive the disaster. Try resisting next time.
 
-[[Sirens]]</tw-passagedata><tw-passagedata pid="46" name="Scylla Charybdis" tags="" position="825,3750" size="100,100">(set: $scyllaVisited to true)
+[[Sirens]]</tw-passagedata><tw-passagedata pid="46" name="Scylla Charybdis" tags="" position="825,3750" size="100,100">&lt;&lt;set $scyllaVisited = true&gt;&gt;
 :: Scylla Charybdis
 &lt;img src=&quot;images/Scylla.png&quot; width=&quot;700&quot;&gt;
 Dark cliffs rise ahead as your ship enters a narrow strait.
@@ -1011,7 +1011,7 @@ The surviving crew rows onward in terrified silence.
 
 You can continue knowing you made the wrong choice.
 
-[[Continue your journey-&gt;Helios Island]]</tw-passagedata><tw-passagedata pid="49" name="Helios Island" tags="" position="700,4000" size="100,100">(set: $thrinaciaVisited to true)
+[[Continue your journey-&gt;Helios Island]]</tw-passagedata><tw-passagedata pid="49" name="Helios Island" tags="" position="700,4000" size="100,100">&lt;&lt;set $thrinaciaVisited = true&gt;&gt;
 :: Helios Island
 
 &lt;img src=&quot;images/sungod.png&quot; width=&quot;700&quot;&gt;
@@ -1091,7 +1091,7 @@ One by one, your sailors vanish beneath the waves.
 
 Only you survive, clinging to broken wreckage as the ocean carries you away alone.
 
-[[Continue your journey-&gt;Calypso Island]]</tw-passagedata><tw-passagedata pid="52" name="Calypso Island" tags="" position="575,4250" size="100,100">(set: $calypsoVisited to true)
+[[Continue your journey-&gt;Calypso Island]]</tw-passagedata><tw-passagedata pid="52" name="Calypso Island" tags="" position="575,4250" size="100,100">&lt;&lt;set $calypsoVisited= true&gt;&gt;
 :: Calypso Island
 &lt;img src=&quot;images/calypso.png&quot; width=&quot;700&quot;&gt;
 Alone upon a piece of broken wreckage, you drift across the endless sea for many days.
@@ -1164,7 +1164,7 @@ Before you leave, she warns you that the seas ahead remain dangerous.
 
 With one final look at the island, you sail back into the open ocean toward your homeland.
 
-[[Continue your journey-&gt;Phaeacians]]</tw-passagedata><tw-passagedata pid="55" name="Phaeacians" tags="" position="575,4500" size="100,100">(set: $phaeaciansVisited to true)
+[[Continue your journey-&gt;Phaeacians]]</tw-passagedata><tw-passagedata pid="55" name="Phaeacians" tags="" position="575,4500" size="100,100">&lt;&lt;set $phaeaciansVisited =true&gt;&gt;
 :: Phaeacians
 
 After leaving Calypso’s island, you sail alone across the sea upon a small raft.
@@ -1239,7 +1239,7 @@ At last you realize that even the greatest heroes sometimes need the help of oth
 
 Maybe you should go back and seek help.
 
-[[Continue your journey-&gt;Phaeacians]]</tw-passagedata><tw-passagedata pid="59" name="Ithaca Return" tags="" position="450,4750" size="100,100">(set: $ithacaVisited to true)
+[[Continue your journey-&gt;Phaeacians]]</tw-passagedata><tw-passagedata pid="59" name="Ithaca Return" tags="" position="450,4750" size="100,100">&lt;&lt;set $ithacaVisited = true&gt;&gt;
 &lt;img src=&quot;images/ithaca.png&quot; width=&quot;700&quot;&gt;
 
 :: Beggar Disguise
@@ -1401,7 +1401,7 @@ Why It Matters: This is the first demonstration of the crew’s fatal flaw: lack
 
 &lt;img src=&quot;images/odyssey-map.jpeg&quot;&gt;
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="Aeolus" tags="" position="1400,2375" size="100,100">(set: $aeolusVisited to true)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="Aeolus" tags="" position="1400,2375" size="100,100">&lt;&lt;set: $aeolusVisited to true&gt;&gt;
 
 # Aeolus – Keeper of the Winds
 &lt;img src=&quot;images/aeolus.png&quot; width=&quot;700&quot;&gt;
